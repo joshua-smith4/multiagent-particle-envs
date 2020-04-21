@@ -2,10 +2,19 @@
 import os,sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import argparse
+import numpy as np
 
 from multiagent.environment import MultiAgentEnv
 from multiagent.policy import InteractivePolicy
 import multiagent.scenarios as scenarios
+
+def done_callback(agent, world):
+    if np.abs(agent.state.p_pos[0]) > 5.0 or np.abs(agent.state.p_pos[1]) > 5.0:
+        return True
+    for landmark in world.landmarks:
+        if np.linalg.norm(agent.state.p_pos - landmark.state.p_pos) <= agent.size - landmark.size:
+            return True
+    return False
 
 if __name__ == '__main__':
     # parse arguments
@@ -18,7 +27,7 @@ if __name__ == '__main__':
     # create world
     world = scenario.make_world()
     # create multiagent environment
-    env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation, info_callback=None, shared_viewer = False)
+    env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation, done_callback=done_callback, info_callback=None, shared_viewer = False)
     # render call to create viewer window (necessary only for interactive policies)
     env.render()
     # create interactive policies for each agent
@@ -32,6 +41,7 @@ if __name__ == '__main__':
             act_n.append(policy.action(obs_n[i]))
         # step environment
         obs_n, reward_n, done_n, _ = env.step(act_n)
+        print(done_n)
         # render all agent views
         env.render()
         # display rewards
