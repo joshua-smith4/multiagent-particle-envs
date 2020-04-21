@@ -1,3 +1,11 @@
+# CS 6110 Instructions
+
+This is the code for my final project in CS 6110. This is repository is forked from the original repository [here](https://github.com/openai/multiagent-particle-envs) and modified to include a Q-learning agent for the simple\_spread.py scenario.
+
+To train a DNN using Q-learning to solve the scenario please run the following commands:
+
+`pip install -r requirements.txt`
+
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # Multi-Agent Particle Environment
