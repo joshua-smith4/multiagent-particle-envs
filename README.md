@@ -5,6 +5,26 @@ This is the code for my final project in CS 6110. This is repository is forked f
 To train a DNN using Q-learning to solve the scenario please run the following commands:
 
 `pip install -r requirements.txt`
+`python main.py --keep_training=<0 or 1 (false/true)> --epochs=<num_epochs>`
+
+The above commands will begin the training process (takes a really long time).
+To view the agents in a rendering of the environment please run the following command.
+
+`python evaluate.py`
+
+This will show 10 games for 1000 frames each.
+
+The saved\_model/latest file contains a saved keras model that I trained for about 24 hours. Evaluating on this model is rather boring because the agents learned that the best technique to maximize reward is to stand perfectly still.
+
+The files and code that I contributed to this project are:
+`dnn/agent.py`
+`dnn/build_model.py`
+`main.py`
+`evaluate.py`
+`requirements.txt`
+
+Thanks,
+    Josh
 
 **Status:** Archive (code is provided as-is, no updates expected)
 
