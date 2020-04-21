@@ -26,11 +26,11 @@ The files and code that I contributed to this project are:
 Thanks,
     Josh
 
-# --------------------Original Readme---------------------------
+# Original Readme
 
 **Status:** Archive (code is provided as-is, no updates expected)
 
-# Multi-Agent Particle Environment
+## Multi-Agent Particle Environment
 
 A simple multi-agent particle world with a continuous observation and discrete action space, along with some basic simulated physics.
 Used in the paper [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf).
