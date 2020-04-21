@@ -26,6 +26,8 @@ The files and code that I contributed to this project are:
 Thanks,
     Josh
 
+# --------------------Original Readme---------------------------
+
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # Multi-Agent Particle Environment
